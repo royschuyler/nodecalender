@@ -1,0 +1,27 @@
+{
+  "name": "nodecalender",
+  "version": "1.0.0",
+  "description": "",
+  "main": "calender.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/royschuyler/nodecalender.git"
+  },
+  "author": "Roy Schuyler <royschuyler@yahoo.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/royschuyler/nodecalender/issues"
+  },
+  "homepage": "https://github.com/royschuyler/nodecalender#readme",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "mocha": "^2.2.5"
+  },
+  "dependencies": {
+    "csv": "^0.4.5",
+    "yargs": "^3.15.0"
+  }
+}

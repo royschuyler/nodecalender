@@ -4,8 +4,8 @@ var moy = process.argv[2].toLowerCase();
 var dom = process.argv[3];
 var y = process.argv[4];
 
-if (moy == 'january')   { moy = 13 }
-if (moy == 'februrary') { moy = 14 }
+if (moy == 'january')   { moy = 13; y = process.argv[4] - 1}
+if (moy == 'februrary') { moy = 14; y = process.argv[4] - 1 }
 if (moy == 'march')     { moy = 3 }
 if (moy == 'april')     { moy = 4 }
 if (moy == 'may')       { moy = 5 }
