@@ -1,10 +1,19 @@
 var argv = require('yargs')
 
-var monthOfYear;
-var moy;
 var monthOfYear = process.argv[2].toLowerCase().charAt(0).toUpperCase() + process.argv[2].slice(1);
 var dom = 1;
 var y = process.argv[3];
+
+
+ // return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
+if ((y % 4 == 0 && (y % 100 != 0)) || (y % 400 == 0)) {
+   var leapYear = true;
+  } else {
+    leapYear = false
+  }
+
+
+
 
 if (monthOfYear == 'January')   { moy = 13; y = process.argv[3] - 1 }
 if (monthOfYear == 'February')  { moy = 14; y = process.argv[3] - 1 }
@@ -19,14 +28,15 @@ if (monthOfYear == 'October')   { moy = 10 }
 if (monthOfYear == 'November')  { moy = 11 }
 if (monthOfYear == 'December')  { moy = 12 }
 
-var dayOfWeek;
 var dayOfMonth = parseInt(dom);
 var month = parseInt(moy);
 var year = parseInt(y);
 var K = year % 100;
 var J = (year - K) / 100;
 
+//ZELLERS EQUATION
 var solve = (dayOfMonth + parseInt((13 * (month + 1) / 5)) + K + parseInt(K / 4) + parseInt(J / 4) + 5 * J) % 7;
+
 //jan march may july aug oct dec
 if (solve == 0) { dayOfWeek = 'Saturday'; tester = 18; leftoverDaysRow1 = '1'; row2Numbers = ' 2  3  4  5  6  7  8'; row3Numbers = ' 9 10 11 12 13 14 15'; row4Numbers = '16 17 18 19 20 21 22' };
 if (solve == 1) { dayOfWeek = 'Sunday';   tester = 0;  leftoverDaysRow1 = '1  2  3  4  5  6  7'; row2Numbers = ' 8  9 10 11 12 13 14'; row3Numbers = '15 16 17 18 19 20 21'; row4Numbers = '22 23 24 25 26 27 28' };
@@ -56,11 +66,29 @@ if (monthOfYear == 'April' || monthOfYear == 'June' || monthOfYear == 'September
     if (solve == 5) { dayOfWeek = 'Thursday'; tester = 12; row5Numbers = '25 26 27 28 29 30'; row6Numbers = ''  };
     if (solve == 6) { dayOfWeek = 'Friday';   tester = 15; row5Numbers = '24 25 26 27 28 29 30'; row6Numbers = ''  }; }
 
+//28 DAY MONTHS
+if (monthOfYear == 'February')
+  { if (solve == 0) { dayOfWeek = 'Saturday'; tester = 18; row5Numbers = '23 24 25 26 27 28'; row6Numbers = '' };
+    if (solve == 1) { dayOfWeek = 'Sunday';   tester = 0;  row5Numbers = ''; row6Numbers = ''  };
+    if (solve == 2) { dayOfWeek = 'Monday';   tester = 3;  row5Numbers = '28'; row6Numbers = '' };
+    if (solve == 3) { dayOfWeek = 'Tuesday';  tester = 6;  row5Numbers = '27 28'; row6Numbers = ''  };
+    if (solve == 4) { dayOfWeek = 'Wednsday'; tester =  9; row5Numbers = '26 27 28'; row6Numbers = ''  };
+    if (solve == 5) { dayOfWeek = 'Thursday'; tester = 12; row5Numbers = '25 26 27 28'; row6Numbers = ''  };
+    if (solve == 6) { dayOfWeek = 'Friday';   tester = 15; row5Numbers = '24 25 26 27 28'; row6Numbers = ''  }; }
+
+//29 DAY MONTHS
+if ((monthOfYear == 'February') && (leapYear = true))
+  { if (solve == 0) { dayOfWeek = 'Saturday'; tester = 18; row5Numbers = '23 24 25 26 27 28 29'; row6Numbers = '' };
+    if (solve == 1) { dayOfWeek = 'Sunday';   tester = 0;  row5Numbers = '29'; row6Numbers = ''  };
+    if (solve == 2) { dayOfWeek = 'Monday';   tester = 3;  row5Numbers = '28 29'; row6Numbers = '' };
+    if (solve == 3) { dayOfWeek = 'Tuesday';  tester = 6;  row5Numbers = '27 28 29'; row6Numbers = ''  };
+    if (solve == 4) { dayOfWeek = 'Wednsday'; tester =  9; row5Numbers = '26 27 28 29'; row6Numbers = ''  };
+    if (solve == 5) { dayOfWeek = 'Thursday'; tester = 12; row5Numbers = '25 26 27 28 29'; row6Numbers = ''  };
+    if (solve == 6) { dayOfWeek = 'Friday';   tester = 15; row5Numbers = '24 25 26 27 28 29'; row6Numbers = ''  }; }
+
 console.log(dayOfWeek);
 
-//******************************CALENDER LOGIC***************************************************************
-
-//they input month and year, day wil aoutomatically be 1 to see what day of the week the first falls on
+//they input month and year, day will aoutomatically be set to 1 to see what day of the week the first falls on
 var firstRowSpace = ' ';
 var row1 = [];
 
@@ -84,18 +112,10 @@ var fixedYear = y;
 if (monthOfYear == 'January' || monthOfYear == 'February') { fixedYear = y + 1 }
   else { fixedYear = y };
 
-
 var spot;
 var presentMonth = '     ' + monthOfYear + ' ' + fixedYear;
 var presentDays = 'Su Mo Tu We Th Fr Sa';
-
 var test3 = ' ' + spaces + leftoverDaysRow1
-
-
-//  5  6  7  8  9 10 11
-// 12 13 14 15 16 17 18
-// 19 20 21 22 23 24 25
-// 26 27 28 29 30 31   ';
 
 console.log(presentMonth);
 console.log(presentDays);
