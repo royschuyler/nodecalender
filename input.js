@@ -6,10 +6,10 @@ var y = process.argv[3];
 
 
  // return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
-if ((y % 4 == 0 && (y % 100 != 0)) || (y % 400 == 0)) {
-   var leapYear = true;
+if (((y % 4 == 0) && (y % 100 != 0)) || (y % 400 == 0)){
+    leapYear = true;
   } else {
-    leapYear = false
+    leapYear = false;
   }
 
 
@@ -77,7 +77,7 @@ if (monthOfYear == 'February')
     if (solve == 6) { dayOfWeek = 'Friday';   tester = 15; row5Numbers = '24 25 26 27 28'; row6Numbers = ''  }; }
 
 //29 DAY MONTHS
-if ((monthOfYear == 'February') && (leapYear = true))
+if (monthOfYear === 'February' && leapYear === true )
   { if (solve == 0) { dayOfWeek = 'Saturday'; tester = 18; row5Numbers = '23 24 25 26 27 28 29'; row6Numbers = '' };
     if (solve == 1) { dayOfWeek = 'Sunday';   tester = 0;  row5Numbers = '29'; row6Numbers = ''  };
     if (solve == 2) { dayOfWeek = 'Monday';   tester = 3;  row5Numbers = '28 29'; row6Numbers = '' };
