@@ -3,8 +3,8 @@ var argv = require('yargs')
 var monthOfYear;
 var moy;
 var monthOfYear = process.argv[2].toLowerCase().charAt(0).toUpperCase() + process.argv[2].slice(1);
-var dom = process.argv[3];
-var y = process.argv[4];
+var dom = 1;
+var y = process.argv[3];
 
 if (monthOfYear == 'January')   { moy = 13; y = process.argv[4] - 1 }
 if (monthOfYear == 'February') { moy = 14; y = process.argv[4] - 1 }
@@ -29,21 +29,40 @@ var J = (year - K) / 100;
 // console.log(moy)
 
 var solve = (dayOfMonth + parseInt((13 * (month + 1) / 5)) + K + parseInt(K / 4) + parseInt(J / 4) + 5 * J) % 7;
-
-if (solve == 0) { dayOfWeek = 'Saturday' };
-if (solve == 1) { dayOfWeek = 'Sunday' };
-if (solve == 2) { dayOfWeek = 'Monday' };
-if (solve == 3) { dayOfWeek = 'Tuesday' };
-if (solve == 4) { dayOfWeek = 'Wednsday' };
-if (solve == 5) { dayOfWeek = 'Thursday' };
-if (solve == 6) { dayOfWeek = 'Friday' };
+var tester;
+if (solve == 0) { dayOfWeek = 'Saturday'; tester = 18 };
+if (solve == 1) { dayOfWeek = 'Sunday'; tester = 0 };
+if (solve == 2) { dayOfWeek = 'Monday'; tester = 3 };
+if (solve == 3) { dayOfWeek = 'Tuesday'; tester = 6 };
+if (solve == 4) { dayOfWeek = 'Wednsday'; tester =  9};
+if (solve == 5) { dayOfWeek = 'Thursday'; tester = 12 };
+if (solve == 6) { dayOfWeek = 'Friday'; tester = 15 };
 
 console.log(dayOfWeek);
+
+//******************************CALENDER LOGIC***************************************************************
+
+//they input month and year, day wil aoutomatically be 1 to see what day of the week the first falls on
+var twoSpaces = ' ';
+var row1 = [];
+// var row2 = [];
+// var row3 = [];
+// var row4 = [];
+// var row5 = [];
+// var row6 = [];
+console.log(tester)
+
+for (i = 0; i < tester; i++) {
+    row1.push(twoSpaces);
+  };
+  var spaces = row1.join('');
+
+
 
 
 //******************************CALENDER*********************************************************************
 
-//6 lines -- 42 spots
+//6 row -- 42 spots
 var fixedYear;
 
 if (monthOfYear == 'January' || monthOfYear == 'February') { fixedYear = y + 1 }
@@ -53,9 +72,11 @@ var spot;
 var presentMonth = '     ' + monthOfYear + ' ' + fixedYear;
 var presentDays = 'Su Mo Tu We Th Fr Sa';
 
-
 console.log(presentMonth);
 console.log(presentDays);
+console.log(spaces, 1)
+
+
 
 
 
