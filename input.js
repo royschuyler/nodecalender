@@ -1,21 +1,22 @@
 var argv = require('yargs')
-
-var moy = process.argv[2].toLowerCase();
+var monthOfYear;
+var moy = process.argv[2].toLowerCase().charAt(0).toUpperCase() + process.argv[2].slice(1);
+var monthOfYear = process.argv[2].toLowerCase().charAt(0).toUpperCase() + process.argv[2].slice(1);
 var dom = process.argv[3];
 var y = process.argv[4];
 
-if (moy == 'january')   { moy = 13; y = process.argv[4] - 1 }
-if (moy == 'februrary') { moy = 14; y = process.argv[4] - 1 }
-if (moy == 'march')     { moy = 3 }
-if (moy == 'april')     { moy = 4 }
-if (moy == 'may')       { moy = 5 }
-if (moy == 'june')      { moy = 6 }
-if (moy == 'july')      { moy = 7 }
-if (moy == 'august')    { moy = 8 }
-if (moy == 'september') { moy = 9 }
-if (moy == 'october')   { moy = 10 }
-if (moy == 'november')  { moy = 11 }
-if (moy == 'december')  { moy = 12 }
+if (moy == 'January')   { moy = 13; y = process.argv[4] - 1 }
+if (moy == 'Februrary') { moy = 14; y = process.argv[4] - 1 }
+if (moy == 'March')     { moy = 3 }
+if (moy == 'April')     { moy = 4 }
+if (moy == 'May')       { moy = 5 }
+if (moy == 'June')      { moy = 6 }
+if (moy == 'July')      { moy = 7 }
+if (moy == 'August')    { moy = 8 }
+if (moy == 'September') { moy = 9 }
+if (moy == 'October')   { moy = 10 }
+if (moy == 'November')  { moy = 11 }
+if (moy == 'December')  { moy = 12 }
 
 var dayOfWeek;
 var dayOfMonth = parseInt(dom);
@@ -34,17 +35,16 @@ if (solve == 4) { dayOfWeek = 'Wednsday' };
 if (solve == 5) { dayOfWeek = 'Thursday' };
 if (solve == 6) { dayOfWeek = 'Friday' };
 
-console.log(dayOfWeek);
+// console.log(dayOfWeek);
 
 
 //******************************CALENDER*********************************************************************
 
 //6 lines -- 42 spots
 var spot;
-var Year = y;
-var Month = moy.charAt(0).toUpperCase() + moy.slice(1);;
-var presentMonth = '     ' + Month + ' ' + Year;
+var presentMonth = '     ' + monthOfYear + ' ' + y;
 var presentDays = 'Su Mo Tu We Th Fr Sa';
+
 
 console.log(presentMonth);
 console.log(presentDays);
