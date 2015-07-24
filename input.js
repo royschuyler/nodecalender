@@ -4,7 +4,7 @@ var moy = process.argv[2].toLowerCase();
 var dom = process.argv[3];
 var y = process.argv[4];
 
-if (moy == 'january')   { moy = 13; y = process.argv[4] - 1}
+if (moy == 'january')   { moy = 13; y = process.argv[4] - 1 }
 if (moy == 'februrary') { moy = 14; y = process.argv[4] - 1 }
 if (moy == 'march')     { moy = 3 }
 if (moy == 'april')     { moy = 4 }
@@ -35,6 +35,31 @@ if (solve == 5) { dayOfWeek = 'Thursday' };
 if (solve == 6) { dayOfWeek = 'Friday' };
 
 console.log(dayOfWeek);
+
+
+//******************************CALENDER*********************************************************************
+
+//6 lines -- 42 spots
+var spot;
+var Year = y;
+var Month = moy.charAt(0).toUpperCase() + moy.slice(1);;
+var presentMonth = '     ' + Month + ' ' + Year;
+var presentDays = 'Su Mo Tu We Th Fr Sa';
+
+console.log(presentMonth);
+console.log(presentDays);
+
+
+
+// var test =
+
+//      July 2015
+// Su Mo Tu We Th Fr Sa
+//           1  2  3  4
+//  5  6  7  8  9 10 11
+// 12 13 14 15 16 17 18
+// 19 20 21 22 23 24 25
+// 26 27 28 29 30 31
 
 
 
