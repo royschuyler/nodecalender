@@ -12,9 +12,6 @@ if (((y % 4 == 0) && (y % 100 != 0)) || (y % 400 == 0)){
     leapYear = false;
   }
 
-
-
-
 if (monthOfYear == 'January')   { moy = 13; y = process.argv[3] - 1 }
 if (monthOfYear == 'February')  { moy = 14; y = process.argv[3] - 1 }
 if (monthOfYear == 'March')     { moy = 3 }
@@ -28,7 +25,7 @@ if (monthOfYear == 'October')   { moy = 10 }
 if (monthOfYear == 'November')  { moy = 11 }
 if (monthOfYear == 'December')  { moy = 12 }
 
-var dayOfMonth = parseInt(dom);
+var dayOfMonth = 1;
 var month = parseInt(moy);
 var year = parseInt(y);
 var K = year % 100;
@@ -88,23 +85,18 @@ if (monthOfYear === 'February' && leapYear === true )
 
 console.log(dayOfWeek);
 
-//they input month and year, day will aoutomatically be set to 1 to see what day of the week the first falls on
-var firstRowSpace = ' ';
+//they input month and year, day will automatically be set to 1 to see what day of the week the first falls on
+
 var row1 = [];
 
 
 //*******FIRST ROW FOR LOOP***************
 for (i = 0; i < tester; i++) {
-    row1.push(firstRowSpace);
+    row1.push(' ');
   };
   var spaces = row1.join('');
 
-  //*******SECOND ROW FOR LOOP***************
-
-
-
-
-//******************************CALENDER*********************************************************************
+//****************************** MONTH CALENDER ***********************************
 
 //6 row -- 42 spots
 var fixedYear = y;
@@ -125,6 +117,11 @@ console.log(row3Numbers);
 console.log(row4Numbers);
 console.log(row5Numbers);
 console.log(row6Numbers);
+
+var space = '       ';
+var date = 'April'
+var date2 = 'June'
+console.log(space, date, space, date );
 
 
 
