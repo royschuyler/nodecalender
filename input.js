@@ -1,7 +1,6 @@
 var argv = require('yargs')
 
 var monthOfYear = process.argv[2].toLowerCase().charAt(0).toUpperCase() + process.argv[2].slice(1);
-var dom = 1;
 var y = process.argv[3];
 
 
@@ -99,17 +98,34 @@ for (i = 0; i < tester; i++) {
 //****************************** MONTH CALENDER ***********************************
 
 //6 row -- 42 spots
-var fixedYear = y;
+var headerYear = process.argv[3];
 
-if (monthOfYear == 'January' || monthOfYear == 'February') { fixedYear = y + 1 }
-  else { fixedYear = y };
 
-var spot;
-var presentMonth = '     ' + monthOfYear + ' ' + fixedYear;
+//******************************CENTER MONTH CALENDER HEADER************************
+var headerLength = monthOfYear.length + process.argv[3].length + 2;
+console.log(headerLength)
+var looper = (20 - headerLength) / 2;
+var headerArr = [];
+
+for (i = 0; i < looper; i ++) {
+    headerArr.push(' ');
+};
+var headerSpace = headerArr.join('');
+var headerWithMonth = headerSpace + monthOfYear + ' ' + headerYear;
+
+
+
+
+
+
+//**********************************************************************************
+
+
+var presentMonth = '     ' + monthOfYear + ' ' + headerYear;
 var presentDays = 'Su Mo Tu We Th Fr Sa';
 var test3 = ' ' + spaces + leftoverDaysRow1
 
-console.log(presentMonth);
+console.log(headerWithMonth);
 console.log(presentDays);
 console.log(test3);
 console.log(row2Numbers);
@@ -118,10 +134,7 @@ console.log(row4Numbers);
 console.log(row5Numbers);
 console.log(row6Numbers);
 
-var space = '       ';
-var date = 'April'
-var date2 = 'June'
-console.log(space, date, space, date );
+
 
 
 
