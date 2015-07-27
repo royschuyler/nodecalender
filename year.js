@@ -1,8 +1,8 @@
 var argv = require('yargs')
+// var tester;
 
 var monthI = 3;
 var yearI = 2;
-
 
 var rowAA = [];
 var rowBB = [];
@@ -10,30 +10,12 @@ var rowCC = [];
 var rowDD = [];
 var rowEE = [];
 var rowFF = [];
-var rowGG = [];
-var rowHH = [];
-var rowII = [];
-var rowJJ = [];
-var rowKK = [];
-var rowLL = [];
-var rowMM = [];
-var rowNN = [];
-var rowOO = [];
-var rowPP = [];
-var rowQQ = [];
-var rowRR = [];
-var rowSS = [];
-var rowTT = [];
-var rowUU = [];
-var rowVV = [];
-var rowWW = [];
-var rowXX = [];
-
 
 if (process.argv[3] !== undefined) {
   var monthOfYear = process.argv[2].toLowerCase().charAt(0).toUpperCase() + process.argv[2].slice(1);
   var y = process.argv[3];
-  hey(monthOfYear, y, monthI)
+  hey(monthOfYear, y, 3)
+
 }
 
   function hey(m, y, x){
@@ -87,39 +69,35 @@ if (process.argv[3] !== undefined) {
 
     //30 DAY MONTHS
     if (m == 'April' || m == 'June' || m == 'September' || m == 'November')
-      { if (solve == 0) { dayOfWeek = 'Saturday'; tester = 18; row5Numbers = '23 24 25 26 27 28 29'; row6Numbers = '                    ' };
-        if (solve == 1) { dayOfWeek = 'Sunday';   tester = 0;  row5Numbers = '29 30               '; row6Numbers = '                    '  };
+      { if (solve == 0) { dayOfWeek = 'Saturday'; tester = 18; row5Numbers = '23 24 25 26 27 28 29'; row6Numbers = '30                  ' };
+        if (solve == 1) { dayOfWeek = 'Sunday';   tester = 0;  row5Numbers = '29 30               '; row6Numbers = '                    ' };
         if (solve == 2) { dayOfWeek = 'Monday';   tester = 3;  row5Numbers = '28 29 30            '; row6Numbers = '                    ' };
-        if (solve == 3) { dayOfWeek = 'Tuesday';  tester = 6;  row5Numbers = '27 28 29 30         '; row6Numbers = '                    '  };
-        if (solve == 4) { dayOfWeek = 'Wednsday'; tester =  9; row5Numbers = '26 27 28 29 30      '; row6Numbers = '                    '  };
-        if (solve == 5) { dayOfWeek = 'Thursday'; tester = 12; row5Numbers = '25 26 27 28 29 30   '; row6Numbers = '                    '  };
-        if (solve == 6) { dayOfWeek = 'Friday';   tester = 15; row5Numbers = '24 25 26 27 28 29 30'; row6Numbers = '                    '  }; }
+        if (solve == 3) { dayOfWeek = 'Tuesday';  tester = 6;  row5Numbers = '27 28 29 30         '; row6Numbers = '                    ' };
+        if (solve == 4) { dayOfWeek = 'Wednsday'; tester =  9; row5Numbers = '26 27 28 29 30      '; row6Numbers = '                    ' };
+        if (solve == 5) { dayOfWeek = 'Thursday'; tester = 12; row5Numbers = '25 26 27 28 29 30   '; row6Numbers = '                    ' };
+        if (solve == 6) { dayOfWeek = 'Friday';   tester = 15; row5Numbers = '24 25 26 27 28 29 30'; row6Numbers = '                    ' }; }
 
     //28 DAY MONTHS
     if (m == 'February')
       { if (solve == 0) { dayOfWeek = 'Saturday'; tester = 18; row5Numbers = '23 24 25 26 27 28   '; row6Numbers = '                    ' };
-        if (solve == 1) { dayOfWeek = 'Sunday';   tester = 0;  row5Numbers = '                    '; row6Numbers = '                    '  };
+        if (solve == 1) { dayOfWeek = 'Sunday';   tester = 0;  row5Numbers = '                    '; row6Numbers = '                    ' };
         if (solve == 2) { dayOfWeek = 'Monday';   tester = 3;  row5Numbers = '28                  '; row6Numbers = '                    ' };
-        if (solve == 3) { dayOfWeek = 'Tuesday';  tester = 6;  row5Numbers = '27 28               '; row6Numbers = '                    '  };
-        if (solve == 4) { dayOfWeek = 'Wednsday'; tester =  9; row5Numbers = '26 27 28            '; row6Numbers = '                    '  };
-        if (solve == 5) { dayOfWeek = 'Thursday'; tester = 12; row5Numbers = '25 26 27 28         '; row6Numbers = '                    '  };
-        if (solve == 6) { dayOfWeek = 'Friday';   tester = 15; row5Numbers = '24 25 26 27 28      '; row6Numbers = '                    '  }; }
+        if (solve == 3) { dayOfWeek = 'Tuesday';  tester = 6;  row5Numbers = '27 28               '; row6Numbers = '                    ' };
+        if (solve == 4) { dayOfWeek = 'Wednsday'; tester =  9; row5Numbers = '26 27 28            '; row6Numbers = '                    ' };
+        if (solve == 5) { dayOfWeek = 'Thursday'; tester = 12; row5Numbers = '25 26 27 28         '; row6Numbers = '                    ' };
+        if (solve == 6) { dayOfWeek = 'Friday';   tester = 15; row5Numbers = '24 25 26 27 28      '; row6Numbers = '                    ' }; }
 
     //29 DAY MONTHS
     if (m === 'February' && leapYear === true )
       { if (solve == 0) { dayOfWeek = 'Saturday'; tester = 18; row5Numbers = '23 24 25 26 27 28 29'; row6Numbers = '                    ' };
-        if (solve == 1) { dayOfWeek = 'Sunday';   tester = 0;  row5Numbers = '29                  '; row6Numbers = '                    '  };
+        if (solve == 1) { dayOfWeek = 'Sunday';   tester = 0;  row5Numbers = '29                  '; row6Numbers = '                    ' };
         if (solve == 2) { dayOfWeek = 'Monday';   tester = 3;  row5Numbers = '28 29               '; row6Numbers = '                    ' };
-        if (solve == 3) { dayOfWeek = 'Tuesday';  tester = 6;  row5Numbers = '27 28 29            '; row6Numbers = '                    '  };
-        if (solve == 4) { dayOfWeek = 'Wednsday'; tester =  9; row5Numbers = '26 27 28 29         '; row6Numbers = '                    '  };
-        if (solve == 5) { dayOfWeek = 'Thursday'; tester = 12; row5Numbers = '25 26 27 28 29      '; row6Numbers = '                    '  };
-        if (solve == 6) { dayOfWeek = 'Friday';   tester = 15; row5Numbers = '24 25 26 27 28 29   '; row6Numbers = '                    '  }; }
+        if (solve == 3) { dayOfWeek = 'Tuesday';  tester = 6;  row5Numbers = '27 28 29            '; row6Numbers = '                    ' };
+        if (solve == 4) { dayOfWeek = 'Wednsday'; tester =  9; row5Numbers = '26 27 28 29         '; row6Numbers = '                    ' };
+        if (solve == 5) { dayOfWeek = 'Thursday'; tester = 12; row5Numbers = '25 26 27 28 29      '; row6Numbers = '                    ' };
+        if (solve == 6) { dayOfWeek = 'Friday';   tester = 15; row5Numbers = '24 25 26 27 28 29   '; row6Numbers = '                    ' }; }
 
     // console.log(dayOfWeek);
-
-
-
-
 
     //*******FIRST ROW FOR LOOP***************
     var row1 = [];
@@ -132,7 +110,6 @@ if (process.argv[3] !== undefined) {
 
     var headerYear = process.argv[x];
     var headerLength = m.length + process.argv[x].length + 2;
-    console.log(headerLength)
     var looper = (20 - headerLength) / 2;
     var headerArr = [];
 
@@ -145,18 +122,25 @@ if (process.argv[3] !== undefined) {
 
     //*************************** MONTH CALENDER PRESENTATION ******************************
 
-    // var presentMonth = '     ' + monthOfYear + ' ' + headerYear;
     var presentDays = 'Su Mo Tu We Th Fr Sa';
     var test3 = ' ' + spaces + leftoverDaysRow1
 
-    // console.log(headerWithMonth);
-    // console.log(presentDays);
-    // console.log(test3);
-    // console.log(row2Numbers);
-    // console.log(row3Numbers);
-    // console.log(row4Numbers);
-    // console.log(row5Numbers);
-    // console.log(row6Numbers);
+if (process.argv[3] !== undefined){
+    console.log(headerWithMonth);
+    console.log(presentDays);
+    console.log(test3);
+    console.log(row2Numbers);
+    console.log(row3Numbers);
+    console.log(row4Numbers);
+    console.log(row5Numbers);
+    console.log(row6Numbers);
+  };
+
+
+
+    // var presentMonth = '     ' + monthOfYear + ' ' + headerYear;
+    var presentDays = 'Su Mo Tu We Th Fr Sa';
+    var test3 = ' ' + spaces + leftoverDaysRow1
 
     rowAA.push(test3)
     rowBB.push(row2Numbers)
@@ -165,32 +149,11 @@ if (process.argv[3] !== undefined) {
     rowEE.push(row5Numbers)
     rowFF.push(row6Numbers)
 
-    // rowAA.push(test3)
-    // rowBB.push(row2Numbers)
-    // rowCC.push(row3Numbers)
-    // rowDD.push(row4Numbers)
-    // rowEE.push(row5Numbers)
-    // rowFF.push(row6Numbers)
-
-    // rowAA.push(test3)
-    // rowBB.push(row2Numbers)
-    // rowCC.push(row3Numbers)
-    // rowDD.push(row4Numbers)
-    // rowEE.push(row5Numbers)
-    // rowFF.push(row6Numbers)
-
-    // rowAA.push(test3)
-    // rowBB.push(row2Numbers)
-    // rowCC.push(row3Numbers)
-    // rowDD.push(row4Numbers)
-    // rowEE.push(row5Numbers)
-    // rowFF.push(row6Numbers)
 };
 
 //**************************** YEAR CALENDER *****************************************
 
 if (process.argv[3] == undefined) {
-  console.log('brick')
 
   var monthArr = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   y = process.argv[2];
@@ -208,16 +171,7 @@ if (process.argv[3] == undefined) {
   hey(monthArr[10], y, yearI)
   hey(monthArr[11], y, yearI)
 
-
-
   var yearSpace = '  ';
-
-    var lastEmptySpace = 19 - row5Numbers.length;
-    var lastSpaceUse = [];
-    for (i = 0; i <= lastEmptySpace; i ++){
-       lastSpaceUse.push(' ')
-    };
-   var newUse = lastSpaceUse.join('');
 
   var AA = rowAA[0] + yearSpace + rowAA[1] + yearSpace + rowAA[2];
   var BB = rowBB[0] + yearSpace + rowBB[1] + yearSpace + rowBB[2];
@@ -225,7 +179,6 @@ if (process.argv[3] == undefined) {
   var DD = rowDD[0] + yearSpace + rowDD[1] + yearSpace + rowDD[2];
   var EE = rowEE[0] + yearSpace + rowEE[1] + yearSpace + rowEE[2];
   var FF = rowFF[0] + yearSpace + rowFF[1] + yearSpace + rowFF[2];
-
 
   var GG = rowAA[3] + yearSpace + rowAA[4] + yearSpace + rowAA[5];
   var HH = rowBB[3] + yearSpace + rowBB[4] + yearSpace + rowBB[5];
@@ -249,17 +202,7 @@ if (process.argv[3] == undefined) {
   var XX = rowFF[9] + yearSpace + rowFF[10] + yearSpace + rowFF[11];
 
 
-
-
-  // console.log(AA);
-  // console.log(BB);
-  // console.log(CC);
-  // console.log(DD);
-  // console.log(EE);
-  // console.log(FF);
-
-
-var yearHeader = '                             2004'
+var yearHeader = '                             ' + process.argv[2]
 var monthHeader1 = '      January               February               March'
 var monthHeader2 = '       April                  May                   June'
 var monthHeader3 = '        July                 August              September'
@@ -301,11 +244,33 @@ console.log(VV)
 console.log(WW)
 console.log(XX)
 
+};
+
+// var should = require('chai').should();
+// var path = require('path');
 
 
+// describe('year', function(){
+//   it('should pass', function(done){
+//     done();
+//   });
+
+//   it('should equal 15', function(){
+//     var x = 5;
+//     var y = 10;
+//     var sum = x + y;
+//     sum.should.equal(15);
+//   });
 
 
-}
+//   it('truthyness', function (done) {
+//     true.should.be.true;
+//     false.should.be.false;
+//     done();
+//   });
+
+
+// });
 
 
 
