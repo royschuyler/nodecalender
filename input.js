@@ -92,6 +92,10 @@ if (process.argv[3] !== undefined) {
 
     // console.log(dayOfWeek);
 
+    }
+
+    function presentMonth(m, y, x){
+
     //*******FIRST ROW FOR LOOP***************
     var row1 = [];
     for (i = 0; i < tester; i++) {
@@ -128,7 +132,10 @@ if (process.argv[3] !== undefined) {
     console.log(row4Numbers);
     console.log(row5Numbers);
     console.log(row6Numbers);
-};
+  };
+
+  presentMonth(monthOfYear, y, monthI);
+
 
 //**************************** YEAR CALENDER *****************************************
 
@@ -150,14 +157,6 @@ if (process.argv[3] == undefined) {
   hey(monthArr[9], y, yearI)
   hey(monthArr[10], y, yearI)
   hey(monthArr[11], y, yearI)
-
-
-
-
-  // for(i = 0; i < 13; i ++){
-
-  // }
-
 
 }
 
